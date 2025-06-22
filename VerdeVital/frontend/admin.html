@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración - VerdeVital</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+  header {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Centro: ocupa todo el espacio y centra su contenido */
+.center {
+  flex: 1;
+  justify-content: center;
+}
+
+.center nav {
+  display: flex;
+  gap: 15px;
+}
+
+/* Derecha: solo alinea sus elementos */
+.right {
+  gap: 10px;
+}
+</style>
+<body>
+  <header>
+    <h1 style="display: flex; text-align: left;">🌱 VerdeVital 🌱</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <button id="switch" class="switch active">
+      <span><i id="icono-modo" class="fa-solid fa-sun"></i></span>
+      <span><i id="icono-modo" class="fa-solid fa-moon"></i></span>
+    </button>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Administración de Productos</h2>
+
+    <!-- Mensaje de acceso denegado -->
+    <p id="mensajeAdmin" style="display: none; color: red;">
+      Acceso denegado. Esta página es solo para administradores.
+    </p>
+    
+    <!-- Formulario para agregar producto -->
+    <form id="formAgregarProducto" class="form-admin">
+      
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Nombre del producto" required />
+      
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio" placeholder="Precio" step="0.01" required />
+      
+      <label for="descripcion">Descripción:</label>
+      <input type="text" id="descripcion" placeholder="Descripcion del producto" required>
+      
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" required>
+        <option value="Frutas">Frutas</option>
+        <option value="Semillas">Verduras</option>
+        <option value="Frutos-Secos">Frutos secos</option>
+        <option value="Producto ecologico">Producto ecologico</option>
+      </select>
+
+      <label for="stock">Stock:</label>
+      <input type="number" id="stock" placeholder="Cantidad" required />
+      
+      <button type="submit">Agregar producto</button>
+    </form>
+
+    <!-- Tabla para visualizar y gestionar productos -->
+    <table id="tablaAdmin">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Categoria</th>
+          <th>Descripcion</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 VerdeVital - María Pérez</p>
+  </footer>
+
+  <script src="assets/js/admin.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background: #d3fbd3;
+  color: #234d1b;
+  line-height: 1.6;
+  margin: 0;
+  transition: 0.3s ease all;
+  font-weight: 900;
+}
+
+/* ----- Header ----- */
+header {
+  background: #2e7d32;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+nav a {
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ----- Main Content ----- */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+h2 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+}
+
+/* ----- Productos ----- */
+#productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.producto {
+  border: 2px solid #ddd;
+  border-radius: 14px;
+  background: white;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.producto:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.15);
+}
+.producto h3 {
+  color: #388e3c;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.producto p {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.producto button {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 22px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+}
+.producto button:hover {
+  background: #388e3c;
+}
+
+/* ----- Formularios ----- */
+form {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 14px rgba(0,0,0,0.12);
+}
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+}
+form input, form select, form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+form button {
+  background: #2e7d32;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+}
+form button:hover {
+  background: #1b5e20;
+}
+
+/* ----- Carrito y botones ----- */
+.carrito-icono {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #66bb6a;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+.carrito-icono:hover {
+  background: #4caf50;
+}
+
+/* ----- Modal ----- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+}
+.modal.activo {
+  display: flex;
+}
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+}
+.modal-content button {
+  margin-top: 1rem;
+  background: #4caf50;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* ----- Footer (Siempre al fondo de la página) ----- */
+footer {
+  background: #2e7d32;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+
+/* Enlaces del footer */
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Utilidades ----- */
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 1rem; }
+.mt-1 { margin-top: 1rem; }
+.btn {
+  background: #43a047;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+}
+.btn:hover {
+  background: #2e7d32;
+}
+
+/* ----- Filtros de Productos ----- */
+input#buscarProducto, select#filtrarCategoria, select#filtrarPrecio {
+  width: 100%;
+  max-width: 350px;
+  padding: 0.8rem;
+  margin: 1rem auto;
+  display: block;
+  border-radius: 8px;
+  border: 2px solid #4caf50;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 600px) {
+  #productos {
+    grid-template-columns: 1fr;
+  }
+  .modal-content {
+    width: 90%;
+  }
+  form {
+    width: 90%;
+  }
+}
+
+/* ModoOscuro */
+body.dark {
+  background-color: #010b03;
+  color: #f1f1f1;
+}
+.navbar {
+  background-color: #1b5e20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 5px;
+  transition: .3s ease all;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.16);
+}
+
+body.dark .navbar { 
+  background: #222222;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.16);
+}
+
+body.dark nav a {
+  color: white;
+}
+
+body.dark nav a:hover {
+  color: #fefefe;
+}
+
+.switch {
+  background: #343D5B;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #f1f1f1;
+  top: 0;
+  left: 0;
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0,0,0,.2);
+}
+.switch.active {
+  background: orange;
+  color: #000000;
+}
+
+.switch.active::after {
+  right: 0;
+  left: unset;
+}
+
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color:#fff;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 40px 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 40px 0; 
+}
+
+.grid .card {
+  background: #45823f;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px rgba(170, 170, 170, 0.16);
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  min-height: 195px;
+  margin-top: 50px;
+  transition: .3s ease all;
+  color: white;
+  font-weight: 900;
+}
+
+body.dark .grid .card {
+  background: #1e1e1e;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/*--- imagenes ---*/
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px; /* opcional para bordes redondeados */
+}
+
+.destacado {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.destacado img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover; /* Recorta si es necesario manteniendo estética */
+}
+
+.img-mini {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 10px;
+}
+.info-contacto {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.info-contacto h3 {
+  color: #2e7d32;
+  font-size: 1.4rem;
+}
+
+.info-contacto p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+/* Estilo general de la tabla */
+#tablaAdmin {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#tablaAdmin th, #tablaAdmin td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+#tablaAdmin th {
+  background-color: #2E7D32;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilo de los inputs */
+.input-producto {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.input-producto:focus {
+  border-color: #2E7D32;
+  outline: none;
+}
+
+/* Estilos de los botones */
+.btn-actualizar, .btn-eliminar {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-actualizar {
+  background-color: #2E7D32;
+  color: white;
+  border: none;
+}
+
+.btn-eliminar {
+  background-color: #D32F2F;
+  color: white;
+  border: none;
+}
+
+.btn-actualizar:hover, .btn-eliminar:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}

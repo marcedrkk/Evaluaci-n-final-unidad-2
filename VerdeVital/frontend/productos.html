@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - VerdeVital</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<style>
+  header {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 20px;
+}
+
+.left, .center, .right {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Centro: ocupa todo el espacio y centra su contenido */
+.center {
+  flex: 1;
+  justify-content: center;
+}
+
+.center nav {
+  display: flex;
+  gap: 15px;
+}
+
+/* Derecha: solo alinea sus elementos */
+.right {
+  gap: 10px;
+}
+</style>
+<body>
+  <header>
+    <h1 style="display: flex; text-align: left;">🌱 VerdeVital 🌱</h1>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="productos.html">Productos</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="#" id="btnLogin" class="btn-login">Login</a>
+      <a href="#" id="btnLogout" style="display: none;">Cerrar Sesión</a>
+      <button id="switch" class="switch active">
+      <span><i id="icono-modo" class="fa-solid fa-sun"></i></span>
+      <span><i id="icono-modo" class="fa-solid fa-moon"></i></span>
+    </button>
+    </nav>
+    <div class="carrito-icono" id="abrirCarrito">
+      Carrito (<span id="cantidadCarrito">0</span>)
+    </div>
+  </header>
+
+  <main>
+    <h2>Catálogo de Productos</h2>
+    <!-- Filtro de productos -->
+<input type="text" id="buscarProducto" placeholder="Buscar productos..." />
+<select id="filtrarCategoria">
+  <option value="">Todas las categorías</option>
+  <option value="Frutas">Frutas</option>
+  <option value="Verduras">Verduras</option>
+  <option value="Granos">Frutos-secos</option>
+</select>
+
+<select id="filtrarPrecio">
+  <option value="">Todos los precios</option>
+  <option value="0-10">Menos de $10</option>
+  <option value="10-50">Entre $10 y $50</option>
+  <option value="50+">Más de $50</option>
+</select>
+    <div id="productos"></div>
+  </main>
+
+  <!-- Modal Login -->
+  <div id="modalLogin" class="modal">
+    <div class="modal-content">
+      <h2>Iniciar Sesión</h2>
+      <form id="formLogin">
+        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+        <button type="submit" class="btn">Ingresar</button>
+      </form>
+      <button id="cerrarLogin" class="btn mt-1">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal Carrito -->
+  <div id="modalCarrito" class="modal">
+    <div class="modal-content">
+      <h2>Tu Carrito</h2>
+      <div id="contenidoCarrito"></div>
+      <div id="botonPaypal"></div>
+      <button id="comprarCarrito" class="btn mt-1">Comprar</button>
+      <button id="vaciarCarrito" class="btn mt-1">Vaciar</button>
+      <button id="cerrarCarrito" class="btn mt-1">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal Success -->
+  <div id="modalSuccess" class="modal">
+    <div class="modal-content">
+      <h2>¡Compra exitosa!</h2>
+      <p>Gracias por tu compra.</p>
+      <button id="cerrarSuccess" class="btn mt-1">Cerrar</button>
+    </div>
+  </div>
+ 
+  <footer>
+    <p>&copy; 2025 VerdeVital - María Pérez</p>
+  </footer>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/darkmode.js"></script>
+</body>
+</html>
